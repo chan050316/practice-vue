@@ -4,7 +4,7 @@
       musiclist
       <div class="list_boxs">
         <div v-for="song in items" class="list" v-bind:key="{ song }">
-          <span class="material-icons deleteBtn" v-on:click="deleteSong()"
+          <span class="material-icons deleteBtn" v-on:click="deleteSong(song)"
             >&#xe92e;
           </span>
           <span class="deleteSongName" style="display: none">{{
@@ -27,10 +27,8 @@ export default {
     };
   },
   methods: {
-    deleteSong() {
-      console.log(song);
-      this.$emit("delete-song", this.song);
-      this.song = {};
+    deleteSong(song) {
+      this.$emit("delete-song", song);
     },
   },
   props: {

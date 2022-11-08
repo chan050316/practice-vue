@@ -24,7 +24,6 @@ export default {
       this.songs.push(song);
     },
     deleteSong(song) {
-      console.log(song);
       this.songs = this.songs.filter(item => {
         return item !== song;
       });
