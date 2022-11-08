@@ -22,6 +22,7 @@ export default {
   methods: {
     addSong(song) {
       this.songs.push(song);
+      console.log(this.songs);
     },
     deleteSong(song) {
       this.songs = this.songs.filter(item => {
@@ -33,12 +34,12 @@ export default {
     return {
       songs: [
         {
-          name: "aa",
-          actor: "Aiaiai",
+          name: "drugs",
+          actor: "upsahl",
         },
         {
-          name: "bb",
-          actor: "Bibibib",
+          name: "sad",
+          actor: "XXXtantacion",
         },
       ],
     };
