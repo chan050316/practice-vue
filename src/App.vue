@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HeaderTitle />
+  <SongList />
+  <CreateForm />
+  <SerchInput />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderTitle from "./components/HeaderTitle.vue";
+import SongList from "./components/SongList.vue";
+import CreateForm from "./components/CreateForm.vue";
+import SerchInput from "./components/SerchInput.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HeaderTitle,
+    SongList,
+    CreateForm,
+    SerchInput,
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-image: url(./assets/img/morning.jpeg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>
