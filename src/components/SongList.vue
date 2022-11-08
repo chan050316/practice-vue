@@ -3,8 +3,10 @@
     <div class="day_name">
       musiclist
       <div class="list_boxs">
-        <div v-for="song of data" class="list" v-bind:key="song">
-          <span class="material-icons deleteBtn">&#xe92e; </span>
+        <div v-for="song in items" class="list" v-bind:key="{ song }">
+          <span class="material-icons deleteBtn" v-on:click="deleteSong()"
+            >&#xe92e;
+          </span>
           <span class="deleteSongName" style="display: none">{{
             song.name
           }}</span>
@@ -19,6 +21,24 @@
 <script>
 export default {
   name: "SongList",
+  data() {
+    return {
+      song: {},
+    };
+  },
+  methods: {
+    deleteSong() {
+      console.log(song);
+      this.$emit("delete-song", this.song);
+      this.song = {};
+    },
+  },
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+  },
 };
 </script>
 

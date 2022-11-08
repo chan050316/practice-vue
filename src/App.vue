@@ -1,7 +1,7 @@
 <template>
   <HeaderTitle />
-  <SongList />
-  <CreateForm />
+  <SongList :items="songs" @delete-song="deleteSong" />
+  <CreateForm :items="songs" @add-song="addSong" />
   <SerchInput />
 </template>
 
@@ -19,10 +19,36 @@ export default {
     CreateForm,
     SerchInput,
   },
+  methods: {
+    addSong(song) {
+      this.songs.push(song);
+    },
+    deleteSong(song) {
+      console.log(song);
+      this.songs = this.songs.filter(item => {
+        return item !== song;
+      });
+    },
+  },
+  data() {
+    return {
+      songs: [
+        {
+          name: "aa",
+          actor: "Aiaiai",
+        },
+        {
+          name: "bb",
+          actor: "Bibibib",
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style>
+@import "http://fonts.googleapis.com/icon?family=Material+Icons";
 #app {
   background-image: url(./assets/img/morning.jpeg);
   height: 100vh;
